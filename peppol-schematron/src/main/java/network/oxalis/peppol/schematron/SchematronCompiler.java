@@ -36,7 +36,7 @@ public class SchematronCompiler implements Closeable {
         this.processor = processor;
 
         XsltCompiler xsltCompiler = processor.newXsltCompiler();
-        xsltCompiler.setURIResolver(new ClasspathURIResolver("/iso-schematron-xslt2"));
+        xsltCompiler.setResourceResolver(new ClasspathResourceResolver("/iso-schematron-xslt2"));
 
         this.steps = Arrays.asList(
                 load("/iso-schematron-xslt2/iso_dsdl_include.xsl", xsltCompiler),
